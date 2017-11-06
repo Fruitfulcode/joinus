@@ -12,24 +12,24 @@
 
 	var $grids = $('.ff-joinus-grid');
 
+	$('.ff-joinus-button').on( 'click', function() {
+		var $button = $(this),
+		$container = $button.parents('.ff-joinus-action'),
+		btnText = $button.data('text'),
+		btnActiveText = $button.data('active-text');
+
+		$container.toggleClass('open').find('.ff-joinus-join-social-links').css('margin-top', '-' + $button.outerHeight() + 'px' );
+
+		if( $container.hasClass('open') ) {
+			$button.text( btnActiveText );
+		} else {
+			$button.text( btnText );
+		}
+
+		return false;
+	});
+
 	if( $grids.length ) {
-
-		$('.ff-joinus-button').on( 'click', function() {
-			var $button = $(this),
-			$container = $button.parents('.ff-joinus-action'),
-			btnText = $button.data('text'),
-			btnActiveText = $button.data('active-text');
-
-			$container.toggleClass('open').find('.ff-joinus-join-social-links').css('margin-top', '-' + $button.outerHeight() + 'px' );
-
-			if( $container.hasClass('open') ) {
-				$button.text( btnActiveText );
-			} else {
-				$button.text( btnText );
-			}
-
-			return false;
-		});
 
 		$grids.each( function() {
 

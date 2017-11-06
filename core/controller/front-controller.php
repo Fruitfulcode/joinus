@@ -99,4 +99,35 @@
 
 		}
 
+		/**
+		 * Save user avatar to WP media library
+		**/
+		function save_avatar( $url ) {
+
+			$filename = 'avatar' . uniqid() . '.jpg';
+
+			$uploaddir = wp_upload_dir();
+			$uploadfile = $uploaddir['path'] . '/' . $filename;
+
+			$contents= file_get_contents( $url );
+
+			$savefile = fopen( $uploadfile, 'w');
+			fwrite( $savefile, $contents);
+			fclose( $savefile);
+
+			$wp_filetype = wp_check_filetype( basename( $filename), null );
+
+			$attachment = array(
+				'post_mime_type' => $wp_filetype['type'],
+				'post_title' => $filename,
+				'post_content' => '',
+				'post_status' => 'inherit'
+			);
+
+			$attach_id = wp_insert_attachment( $attachment, $uploadfile );
+
+			return $attach_id;
+
+		}
+
 	}

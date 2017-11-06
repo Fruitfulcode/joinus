@@ -69,15 +69,16 @@
 	font-size: 16px;
 	line-height: 24px;
 	border-radius: 30px;
-	padding: 5px 20px;
+	padding: 10px 15px;
 	position: absolute;
 	color: #fff;
 	left: 50%;
 	transform: translateX(0);
-	top: 0;
+	top: -15px;
 	opacity: 0;
 	visibility: hidden;
 	transition: opacity 0.3s, transform 0.5s;
+	white-space: nowrap;
 }
 .ff-joinus-action.open .ff-joinus-join-social-links {
 	opacity: 1;
@@ -102,8 +103,13 @@
 .ff-joinus-caption .ff-joinus-join-social-links > a {
 	color: #fff;
 	transition: color 0.3s;
+	margin: 0 5px;
+	font-size: 16px;
+	line-height: 24px;
 }
-.ff-joinus-caption .ff-joinus-join-social-links > a:hover {
+.ff-joinus-caption .ff-joinus-join-social-links > a:hover,
+.ff-joinus-caption .ff-joinus-join-social-links > a:active,
+.ff-joinus-caption .ff-joinus-join-social-links > a:focus {
 	color: #1a77d3;
 }
 

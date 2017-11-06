@@ -1,11 +1,5 @@
 <div class="ff-joinus-settings-wrap wrap">
 
-	<?php if( isset( $_GET['settings-updated'] ) ): ?>
-		<div class="notice notice-success is-dismissible">
-			<p><?php esc_html_e( 'Settings saved successfully', 'joinus' ); ?></p>
-		</div>
-	<?php endif; ?>
-
 	<h2><?php esc_html_e( 'Join Us Plugin Settings', 'joinus' ); ?></h2>
 
 	<form method="post" action="options.php">

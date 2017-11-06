@@ -68,6 +68,9 @@ if ( !class_exists( 'ff_joinus')) {
 				require_once $this->plugin_path . '/core/controller/front-controller.php';
 				$this->controller->front = new ff_joinus_core_controller_front();
 
+				require_once $this->plugin_path . '/core/controller/front-oauth-controller.php';
+				$this->controller->front_oauth = new ff_joinus_core_controller_front_oauth();
+
 			}
 
 			// Inject models, view and controllers from this base controller into all OTHER controllers & models

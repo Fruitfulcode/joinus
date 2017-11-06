@@ -3,14 +3,18 @@
 	 * @param $data shortcode attributes
 	**/
 
+	if( ! class_exists( 'Aq_Resize' )) {
+		require_once $this->plugin_path . 'core/vendor/aq_resizer/aq_resizer.php';
+	}
+
 	$users = new WP_User_Query( array(
 		'order' => $data['order'],
 		'orderby' => $data['orderby'],
 		'number' => $data['number'],
 		'meta_query' => array(
 			array(
-				'key' => 'ff_joinus_id',
-				'value' => $data['id'],
+				'key' => 'ff_joinus_page_id_' . $data['id'],
+				'value' => 'yes',
 				'compare' => '='
 			)
 		)
@@ -40,10 +44,13 @@
 					<div class="ff-joinus-grid-item-overlay"></div>
 
 					<div class="ff-joinus-grid-item-image">
-						<a href="">
+						<a target="_blank" rel="nofollow" href="<?php echo esc_attr( get_user_meta( $user->ID, 'ff_joinus_social_profile_url', true ) ); ?>">
 							<?php
 								$social_avatar = get_user_meta( $user->ID, 'ff_joinus_photo_id', true );
 								if( is_numeric( $social_avatar ) ) {
+
+									$src = aq_resize( wp_get_attachment_url( $social_avatar ), $data['photo_width'], $data['photo_height'], true );
+									echo '<img src="' . esc_attr( $src ) . '" alt="" />';
 
 								} else {
 									// fallback to default avatar
