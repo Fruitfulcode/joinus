@@ -15,7 +15,7 @@
 				'ff-joinus-return-url' => get_permalink( get_the_ID())
 			), site_url('/') ) ); ?>" class="facebook"><i class="fa fa-facebook-official"></i></a> 
 
-			<?php do_action( 'ff_joinus_join_social_links'); ?>
+			<?php do_action( 'ff_joinus_join_social_links', $data ); ?>
 
 		</div>
 		
