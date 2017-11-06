@@ -65,12 +65,6 @@
 				**/
 				'photo_width' => 150,
 				'photo_height' => 150,
-				/**
-					Possible options:
-					- (empty) - no link
-					- (profile) - to user's profile 
-				**/
-				'link_type' => 'profile', 
 				'display_name' => 'yes',
 				/**
 					Possible options (more effects soon):
