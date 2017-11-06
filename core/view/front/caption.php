@@ -9,11 +9,15 @@
 	<div class="ff-joinus-action">
 		<div class="ff-joinus-join-social-links">
 
+			<?php if( get_option('ff_joinus_facebook_app_api_key') <> '' && get_option('ff_joinus_facebook_app_secret') <> '' ): ?>
+
 			<a href="<?php echo esc_attr( add_query_arg( array(
 				'ff-joinus' => 'facebook',
 				'ff-joinus-page-id' => $data['id'],
 				'ff-joinus-return-url' => get_permalink( get_the_ID())
 			), site_url('/') ) ); ?>" class="facebook"><i class="fa fa-facebook-official"></i></a> 
+
+			<?php endif; ?>
 
 			<?php do_action( 'ff_joinus_join_social_links', $data ); ?>
 
