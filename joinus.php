@@ -1,10 +1,11 @@
 <?php
 	/*
 		Plugin Name: Join Us
-		Plugin URI: https://fruitfulcode.com/
+		Plugin URI: https://joinus.fruitfulcode.com/
 		Description: A plugin that creates a gallery of users joined using social networks: Facebook in a free version and LinkedIn, Google, Instagram in a Pro version.
 		Version: 1.0
-		Author: Fruitful Code
+		Author: fruitfulcode
+		Author URI: http://fruitfulcode.com
 		License: GPL
 */
 if ( !class_exists( 'ff_joinus')) {
