@@ -46,7 +46,14 @@
 			register_setting( 'ff_joinus_settings', 'ff_joinus_facebook_app_api_key' );
 			register_setting( 'ff_joinus_settings', 'ff_joinus_facebook_app_secret' );
 
-			do_action( 'ff_joinus_register_plugin_settings');
+			register_setting( 'ff_joinus_settings', 'ff_joinus_linkedin_api_key' );
+			register_setting( 'ff_joinus_settings', 'ff_joinus_linkedin_api_secret' );
+			
+			register_setting( 'ff_joinus_settings', 'ff_joinus_instagram_client_id' );
+			register_setting( 'ff_joinus_settings', 'ff_joinus_instagram_client_secret' );
+
+			register_setting( 'ff_joinus_settings', 'ff_joinus_googleplus_api_key' );
+			register_setting( 'ff_joinus_settings', 'ff_joinus_googleplus_api_secret' );
 
 		}
 

@@ -38,7 +38,7 @@
 				),
 			);
 
-			apply_filters( 'ff_joius_networks', $allowed_networks );
+			$allowed_networks = apply_filters( 'ff_joius_networks', $allowed_networks );
 
 			if( isset( $_GET['ff-joinus'] ) && in_array( $_GET['ff-joinus'], array_keys( $allowed_networks ) ) ) {
 
@@ -120,9 +120,11 @@
 
 				if( isset( $facebook_user_data['email'] ) && trim( $facebook_user_data['email'] ) == '' ) {
 					$user_email = $facebook_user_data['id'] . '@facebook.com';
+				} else {
+					$user_email = $facebook_user_data['email'];
 				}
 
-				if( !username_exists( $user_login ) && !email_exists( $facebook_user_data['email'] ) ) {
+				if( !username_exists( $user_login ) && !email_exists( $user_email ) ) {
 
 					$random_password = wp_generate_password( $length=12, $include_standard_special_chars=false );
 					$user_id = wp_create_user( $user_login, $random_password, $user_email );

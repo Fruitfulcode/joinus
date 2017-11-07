@@ -49,7 +49,9 @@
 								$social_avatar = get_user_meta( $user->ID, 'ff_joinus_photo_id', true );
 								if( is_numeric( $social_avatar ) ) {
 
-									$src = aq_resize( wp_get_attachment_url( $social_avatar ), $data['photo_width'], $data['photo_height'], true );
+									$attachment_url = wp_get_attachment_url( $social_avatar );
+									$resized = aq_resize( $attachment_url, $data['photo_width'], $data['photo_height'], true );
+									$src = !$resized ? $attachment_url : $resized;
 									echo '<img src="' . esc_attr( $src ) . '" alt="" />';
 
 								} else {
