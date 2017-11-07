@@ -22,7 +22,7 @@
 
 ?>
 
-<div class="ff-joinus">
+<div id="<?php echo esc_attr( $data['id'] ); ?>" class="ff-joinus">
 
 	<?php if( $data['join_text_position'] === 'top' ): ?>
 
@@ -44,7 +44,14 @@
 					<div class="ff-joinus-grid-item-overlay"></div>
 
 					<div class="ff-joinus-grid-item-image">
-						<a target="_blank" rel="nofollow" href="<?php echo esc_attr( get_user_meta( $user->ID, 'ff_joinus_social_profile_url', true ) ); ?>">
+						<?php
+
+							$profile_url = get_user_meta( $user->ID, 'ff_joinus_social_profile_url', true );
+							$profile_url = $profile_url <> '' ? $profile_url : 'javascript:;'
+						
+						?>
+
+						<a target="_blank" rel="nofollow" href="<?php echo esc_attr( $profile_url ); ?>">
 							<?php
 								$social_avatar = get_user_meta( $user->ID, 'ff_joinus_photo_id', true );
 								if( is_numeric( $social_avatar ) ) {
@@ -88,3 +95,68 @@
 	<?php endif; ?>
 
 </div>
+
+<?php
+	/**
+	 * Custom styles
+	**/
+?>
+<style type="text/css">
+
+	<?php if( $data['button_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-button {
+		background-color: <?php echo $data['button_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['button_hover_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-button:hover,
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-button:active,
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-button:focus {
+		background-color: <?php echo $data['button_hover_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['button_shadow_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-button:hover,
+	#<?php echo $data['id']; ?> .ff-joinus-action.open .ff-joinus-button {
+		box-shadow: 0px 0px 0px 9px <?php echo $data['button_shadow_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['tooltip_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-join-social-links {
+		background-color: <?php echo $data['tooltip_color']; ?>;
+	}
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-join-social-links > a:after {
+		border-color: <?php echo $data['tooltip_color']; ?> transparent transparent transparent;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['tooltip_icon_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-join-social-links > a {
+		color: <?php echo $data['tooltip_icon_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['tooltip_icon_hover_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-join-social-links > a:hover,
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-join-social-links > a:active,
+	#<?php echo $data['id']; ?> .ff-joinus-caption .ff-joinus-join-social-links > a:focus {
+		color: <?php echo $data['tooltip_icon_hover_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['name_overlay_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-grid-item-text {
+		background-color: <?php echo $data['name_overlay_color']; ?>;
+	}
+	<?php endif; ?>
+
+	<?php if( $data['name_overlay_text_color'] <> '' ): ?>
+	#<?php echo $data['id']; ?> .ff-joinus-grid-item-text {
+		color: <?php echo $data['name_overlay_text_color']; ?>;
+	}
+	<?php endif; ?>
+	
+</style>

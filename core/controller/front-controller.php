@@ -48,15 +48,7 @@
 		function add_shortcode( $atts ) {
 
 			$atts = shortcode_atts( array(
-				/**
-					-----------------------------------------------------------------
-					This is not working with some social networks, maybe TODO:
-					-----------------------------------------------------------------
-					Here we can assign ID for a grid. Global means the whole website,
-					but at this time, if we change ID, it will be possible to attach
-					a grid of users to any unique page / event etc
-				**/
-				// 'id' => 'global',
+				'id' => 'ff-joinus-shortcode',
 				/**
 					Query params
 				**/
@@ -88,6 +80,15 @@
 				'join_text' => esc_html__( 'Want to go? Join us, we are waiting', 'joinus'),
 				'join_button_text' => esc_html__( 'Join Us', 'joinus'),
 				'join_button_active_text' => esc_html__( 'Choose network', 'joinus'),
+
+				'button_color' => '',
+				'button_hover_color' => '',
+				'button_shadow_color' => '',
+				'tooltip_color' => '',
+				'tooltip_icon_color' => '',
+				'tooltip_icon_hover_color' => '',
+				'name_overlay_color' => '',
+				'name_overlay_text_color' => '',
 			), $atts );
 
 			ob_start();
