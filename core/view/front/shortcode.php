@@ -13,7 +13,7 @@
 		'number' => $data['number'],
 		'meta_query' => array(
 			array(
-				'key' => 'ff_joinus_page_id_' . $data['id'],
+				'key' => 'ff_joinus',
 				'value' => 'yes',
 				'compare' => '='
 			)

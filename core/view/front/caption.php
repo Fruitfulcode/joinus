@@ -13,8 +13,7 @@
 
 			<a href="<?php echo esc_attr( add_query_arg( array(
 				'ff-joinus' => 'facebook',
-				'ff-joinus-page-id' => $data['id'],
-				'ff-joinus-return-url' => get_permalink( get_the_ID())
+				'ff-joinus-return-url' => add_query_arg( 'ff-joinus-callback', 'facebook', get_permalink( get_the_ID()) )
 			), site_url('/') ) ); ?>" class="facebook"><i class="fa fa-facebook-official"></i></a> 
 
 			<?php endif; ?>

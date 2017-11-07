@@ -68,9 +68,8 @@
 			$permissions = ['email', 'picture', 'cover', 'name', 'first_name', 'last_name'];
 
 			$redirect_url = $helper->getLoginUrl( add_query_arg( array(
-				'ff-joinus-callback' => 'facebook',
-				'ff-joinus-page-id' => $_GET['ff-joinus-page-id']
-			), $_GET['ff-joinus-return-url'] ) );
+				'ff-joinus-callback' => 'facebook'
+			), add_query_arg( 'ff-joinus-callback', 'facebook', get_permalink( get_the_ID()) ) ) );
 
 			wp_redirect( $redirect_url );
 
@@ -144,7 +143,7 @@
 					'display_name' => $facebook_user_data['name'],
 				) );
 
-				update_user_meta( $user_id, 'ff_joinus_page_id_' . wp_kses_post( $_GET['ff-joinus-page-id'] ), 'yes' );
+				update_user_meta( $user_id, 'ff_joinus', 'yes' );
 				update_user_meta( $user_id, 'ff_joinus_social_profile_url', 'https://www.facebook.com/profile.php?id=' . $facebook_user_data['id'] );
 
 				if( isset( $facebook_picture['url'] ) ) {

@@ -49,11 +49,14 @@
 
 			$atts = shortcode_atts( array(
 				/**
+					-----------------------------------------------------------------
+					This is not working with some social networks, maybe TODO:
+					-----------------------------------------------------------------
 					Here we can assign ID for a grid. Global means the whole website,
 					but at this time, if we change ID, it will be possible to attach
 					a grid of users to any unique page / event etc
 				**/
-				'id' => 'global',
+				// 'id' => 'global',
 				/**
 					Query params
 				**/
