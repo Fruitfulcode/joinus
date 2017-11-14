@@ -18,6 +18,7 @@
 .ff-joinus-caption {
 	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 .ff-joinus-caption h1, .ff-joinus-caption h2, .ff-joinus-caption h3,
 .ff-joinus-caption h4, .ff-joinus-caption h5, .ff-joinus-caption h6 {
@@ -85,10 +86,11 @@
 	visibility: visible;
 	transform: translateX(-50%);
 }
-.ff-joinus-caption .ff-joinus-join-social-links > a:before {
+.ff-joinus-caption .ff-joinus-join-social-links > a:before,
+.ff-joinus-caption .ff-joinus-join-social-links > a:after {
 	display: none;
 }
-.ff-joinus-caption .ff-joinus-join-social-links > a:after {
+.ff-joinus-caption .ff-joinus-join-social-links:after {
 	content: '';
 	width: 0;
 	height: 0;
