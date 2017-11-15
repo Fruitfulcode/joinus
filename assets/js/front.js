@@ -4,9 +4,9 @@
 
 	function ff_joinus_grid_resize( $grid, width ) {
 
-			$grid.find('.ff-joinus-grid-item').css( {
-				'width' : width
-			});
+		$grid.find('.ff-joinus-grid-item').css( {
+			'width' : width
+		});
 
 	}
 
@@ -57,7 +57,9 @@
 					columnWidth: '.ff-joinus-grid-item'
 				});
 
-			});
+			},
+			waitForAll: true
+			);
 
 		});
 
