@@ -1,14 +1,14 @@
 === Plugin Name ===
 Contributors: fruitfulcode
 Donate link: https://fruitfulcode.com/
-Tags: join us, facebook login, events, collect users, join user, facebook authorization
+Tags: join us, facebook login, events, collect users, join user, facebook authorization, meeting, join us, invite friends, social, user gallery, user list, sign up, social login
 Requires at least: 3.5
 Tested up to: 4.8.3
 Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Join us plugin gives ability to create a gallery of users who going on your event using Facebook login.
+Join Us plugin gives an ability to create a gallery of users who are going to visit your event using Facebook login. Enable your guests to use also Linkedin, Google and Instagram with our PRO version.
 
 == Description ==
 
