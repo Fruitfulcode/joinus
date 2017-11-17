@@ -48,7 +48,7 @@
 				'margin-right' : '-' + halfGutter + 'px',
 			})
 
-			$grid.waitForImages(function() {
+			$grid.waitForImages(true).done( function() {
 
 				$(this).masonry({
 					itemSelector: '.ff-joinus-grid-item',
@@ -57,9 +57,7 @@
 					columnWidth: '.ff-joinus-grid-item'
 				});
 
-			},
-			waitForAll: true
-			);
+			});
 
 		});
 
