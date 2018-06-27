@@ -55,6 +55,7 @@
 			register_setting( 'ff_joinus_settings', 'ff_joinus_google_client_id' );
 			register_setting( 'ff_joinus_settings', 'ff_joinus_google_client_secret' );
 
+			do_action('fruitful_joinus_plugin_setting_save');
 		}
 
 		/**
