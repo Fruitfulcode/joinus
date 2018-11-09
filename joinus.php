@@ -64,10 +64,6 @@ if ( !class_exists( 'ff_joinus')) {
 				require_once $this->plugin_path . '/core/controller/backend-controller.php';
 				$this->controller->backend = new ff_joinus_core_controller_backend();
 
-				// Fruitful statistics
-				require $this->plugin_path . '/fruitful-stats/send-statistics.php';
-				$ffc_stat = new ffc_joinus_stats();
-
 			} else {
 
 				require_once $this->plugin_path . '/core/controller/front-controller.php';
@@ -102,5 +98,13 @@ if ( !class_exists( 'ff_joinus')) {
 	global $ff_joinus;
 	$ff_joinus = new ff_joinus;
 	$ff_joinus->run();
+
+	if (is_admin()) {
+		// Fruitful apps
+		require plugin_dir_path(__FILE__) . '/vendor/fruitful-app/fruitful-app-core.php';
+
+		$FF_Maintenance_App = new FruitfulJoinUsApp(__FILE__);
+		$FF_Maintenance_App->dispatch();
+	}
 
 }
